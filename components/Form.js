@@ -3,6 +3,10 @@ import { View, Text, TextInput, Button } from 'react-native';
 
 class Form extends Component {
 
+  submitHandler = () => {
+    alert('Button pressed');
+  }
+
   render() {
     return (
       <View>
@@ -11,6 +15,7 @@ class Form extends Component {
         />
         <Button
           title="Add new goal"
+          onPress={this.submitHandler}
         />
       </View>
     );
