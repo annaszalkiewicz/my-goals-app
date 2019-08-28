@@ -1,25 +1,24 @@
-import React, { Component } from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
+import React, { useState } from "react";
+import { View, Text, TextInput, Button } from "react-native";
 
-class Form extends Component {
+const Form = () => {
 
-  submitHandler = () => {
-    alert('Button pressed');
+  const [textInput, changeText] = useState('');
+
+  const changeTextHandler = (inputValue) => {
+    changeText(inputValue)
   }
 
-  render() {
-    return (
-      <View>
-        <TextInput
-          placeholder="What's your next goal?"
-        />
-        <Button
-          title="Add new goal"
-          onPress={this.submitHandler}
-        />
-      </View>
-    );
-  }
-}
+  return (
+    <View>
+      <TextInput
+        placeholder="What's your next goal?"
+        value={textInput}
+        onChangeText={changeTextHandler}
+      />
+      <Button title="Add new goal" onPress={submitHandler} />
+    </View>
+  );
+};
 
 export default Form;
