@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import Form from './components/Form';
+import List from './components/List';
 
 const App = () => {
 
@@ -24,6 +25,7 @@ const App = () => {
       onSubmit={submitHandler}
       newGoal={newGoal}
       />
+      <List />
     </View>
   );
 }
