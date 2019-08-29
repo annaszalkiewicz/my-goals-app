@@ -1,29 +1,19 @@
-import React, { useState } from "react";
-import { View, Text, TextInput, Button } from "react-native";
+import React from "react";
+import { View, TextInput, Button } from "react-native";
 
-const Form = () => {
-
-  const [newGoal, changeText] = useState('');
-  const [goals, setGoals] = useState([]);
-
-  const changeTextHandler = (inputValue) => {
-    changeText(inputValue)
-  };
-
-  const submitHandler = () => {
-    setGoals(currentGoals => [...currentGoals, newGoal]);
-  };
+const Form = (props) => {
 
   return (
     <View>
       <TextInput
         placeholder="What's your next goal?"
-        value={newGoal}
-        onChangeText={changeTextHandler}
+        value={props.newGoal}
+        onChangeText={props.onChangeText}
       />
-      <Button title="Add new goal" onPress={submitHandler} />
+      <Button title="Add new goal" onPress={props.onSubmit} />
     </View>
   );
+
 };
 
 export default Form;
