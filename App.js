@@ -1,11 +1,29 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+
 import Form from './components/Form';
 
-export default function App() {
+const App = () => {
+
+  const [newGoal, changeText] = useState('');
+  const [goals, setGoals] = useState([]);
+
+  const changeTextHandler = (inputValue) => {
+    changeText(inputValue)
+  };
+
+  const submitHandler = () => {
+    setGoals(currentGoals => [...currentGoals, newGoal]);
+    console.log(goals);
+  };
+
   return (
     <View style={styles.container}>
-      <Form />
+      <Form
+      onChangeText={changeTextHandler}
+      onSubmit={submitHandler}
+      newGoal={newGoal}
+      />
     </View>
   );
 }
@@ -18,3 +36,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App;
