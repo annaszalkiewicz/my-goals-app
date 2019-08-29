@@ -1,14 +1,14 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-const ListItem = () => {
+const ListItem = (props) => {
 
   return (
     <View>
-      <Text></Text>
+      <Text>{props.title}</Text>
     </View>
   )
-  
+
 }
 
 export default ListItem;
