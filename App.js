@@ -14,7 +14,13 @@ const App = () => {
   };
 
   const submitHandler = () => {
-    setGoals(currentGoals => [...currentGoals, newGoal]);
+    setGoals(currentGoals => [
+      ...currentGoals, 
+      {
+        title: newGoal,
+        key: Math.random().toString()
+      }
+    ]);    
   };
 
   return (
@@ -33,10 +39,9 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    padding: 30
   },
 });
 
