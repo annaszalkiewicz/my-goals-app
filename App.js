@@ -15,7 +15,6 @@ const App = () => {
 
   const submitHandler = () => {
     setGoals(currentGoals => [...currentGoals, newGoal]);
-    console.log(goals);
   };
 
   return (
@@ -25,7 +24,9 @@ const App = () => {
       onSubmit={submitHandler}
       newGoal={newGoal}
       />
-      <List />
+      <List
+        goals={goals}
+      />
     </View>
   );
 }

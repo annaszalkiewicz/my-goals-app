@@ -1,10 +1,23 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, FlatList, Text } from 'react-native';
+import ListItem from './ListItem';
 
-const List = () => {
+const List = (props) => {
+
+  const renderItem = ({item}) => {
+    return (
+      <ListItem
+        title={item.title}
+      /> 
+    )
+  }
+
   return (
     <View>
-      <Text>List component</Text>
+      <FlatList
+        data={props.goals}
+        renderItem={renderItem}
+      />
     </View>
   )
 }
