@@ -1,14 +1,15 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
 
-const ListItem = (props) => {
+const ListItem = props => {
 
   return (
-    <View>
-      <Text>{props.title}</Text>
-    </View>
-  )
-
-}
+    <TouchableOpacity onPress={() => alert('Clicked!')}>
+      <View>
+        <Text>{props.title}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+};
 
 export default ListItem;
