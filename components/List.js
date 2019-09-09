@@ -9,6 +9,8 @@ const List = (props) => {
     return (
       <ListItem
         title={item.title}
+        id={item.key}
+        removeGoalHandler={props.removeGoalHandler}
       /> 
     )
   }

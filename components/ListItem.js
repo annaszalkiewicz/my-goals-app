@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 const ListItem = props => {
 
   return (
-    <TouchableOpacity onPress={() => alert('Clicked!')}>
+    <TouchableOpacity onPress={props.removeGoalHandler.bind(this, props.id)}>
       <View style={styles.list}> 
         <Text>{props.title}</Text>
       </View>

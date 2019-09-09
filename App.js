@@ -23,6 +23,12 @@ const App = () => {
     ]);    
   };
 
+  const removeGoalHandler = goalId => {
+    setGoals(currentGoals => {
+      return currentGoals.filter(goal => goal.key !== goalId);
+    })
+  }
+
   return (
     <View style={styles.container}>
       <Form
@@ -32,6 +38,7 @@ const App = () => {
       />
       <List
         goals={goals}
+        removeGoalHandler={removeGoalHandler}
       />
     </View>
   );
