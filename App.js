@@ -36,19 +36,50 @@ const App = () => {
         onSubmit={submitHandler}
         newGoal={newGoal}
       />
-      <List goals={goals} removeGoalHandler={removeGoalHandler} />
-      <TouchableOpacity>
-        <MaterialCommunityIcons name="plus" size={62} />
-      </TouchableOpacity>
+      <View style={styles.listContainer}>
+        <List goals={goals} removeGoalHandler={removeGoalHandler} />
+      </View>
+      <View style={styles.iconContainer}>
+        <TouchableOpacity>
+          <View style={styles.icon}>
+            <MaterialCommunityIcons name="plus" size={48} color="#951616" />
+          </View>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: "#fff",
-    justifyContent: "center",
+    justifyContent: "space-between",
     padding: 30
+  },
+  listContainer: {
+    flex: 1
+  },
+  iconContainer: {
+    flex: 0.1
+  },
+  icon: {
+    position: "absolute",
+    bottom: 0,
+    right: 0,
+    width: 70,
+    height: 70,
+    padding: 10,
+    shadowColor: "#000",
+    shadowOpacity: 1,
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    borderRadius: 70,
+    elevation: 10,
+    backgroundColor: "#fff"
+    // borderWidth: 2
   }
 });
 
