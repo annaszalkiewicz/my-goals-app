@@ -1,9 +1,13 @@
 import React from "react";
 import { View, TextInput, Button, Modal, StyleSheet } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const Form = props => {
   return (
     <Modal visible={props.visible} animationType="slide">
+      <View style={styles.back}>
+        <MaterialCommunityIcons name="arrow-left" size={48} color="#951616" />
+      </View>
       <View style={styles.container}>
         <View style={styles.inputContainer}>
           <TextInput
@@ -27,6 +31,9 @@ const Form = props => {
 };
 
 const styles = StyleSheet.create({
+  back: {
+    padding: 10
+  },
   container: {
     flex: 1,
     justifyContent: "center",
