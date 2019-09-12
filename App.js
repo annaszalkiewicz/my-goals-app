@@ -22,6 +22,7 @@ const App = () => {
         key: Math.random().toString()
       }
     ]);
+    resetForm();
   };
 
   const removeGoalHandler = goalId => {
@@ -32,6 +33,11 @@ const App = () => {
 
   const closeModal = () => {
     toggleModal(false);
+    resetForm();
+  }
+
+  const resetForm = () => {
+    changeText("");
   }
 
   return (
