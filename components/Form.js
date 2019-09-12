@@ -14,7 +14,13 @@ const Form = props => {
             style={styles.input}
           />
         </View>
-        <Button title="Add new goal" onPress={props.onSubmit} />
+        <View style={styles.button}>
+          <Button
+            title="Add new goal"
+            onPress={props.onSubmit}
+            color="#951616"
+          />
+        </View>
       </View>
     </Modal>
   );
@@ -28,13 +34,16 @@ const styles = StyleSheet.create({
     padding: 30
   },
   inputContainer: {
-    width: '80%',
+    width: "80%",
     maxWidth: 500,
     borderBottomWidth: 2,
     borderBottomColor: "#000"
   },
   input: {
     paddingVertical: 10
+  },
+  button: {
+    marginTop: 16
   }
 });
 
