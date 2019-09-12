@@ -8,6 +8,7 @@ import List from "./components/List";
 const App = () => {
   const [newGoal, changeText] = useState("");
   const [goals, setGoals] = useState([]);
+  const [isVisible, toggleModal] = useState(false);
 
   const changeTextHandler = inputValue => {
     changeText(inputValue);
@@ -31,21 +32,26 @@ const App = () => {
 
   return (
     <View style={styles.container}>
+      <View style={styles.listContainer}>
+        <List goals={goals} removeGoalHandler={removeGoalHandler} />
+      </View>
+
+      <View style={styles.iconContainer}>
+        <TouchableOpacity onPress={() => toggleModal(true)}>
+        {/* <TouchableOpacity onPress={() => alert('Clicked icon!')}> */}
+
+          <View >
+            <MaterialCommunityIcons name="plus" size={48} color="#951616" style={styles.icon} />
+          </View>
+        </TouchableOpacity>
+      </View>
+
       <Form
+        visible={isVisible}
         onChangeText={changeTextHandler}
         onSubmit={submitHandler}
         newGoal={newGoal}
       />
-      <View style={styles.listContainer}>
-        <List goals={goals} removeGoalHandler={removeGoalHandler} />
-      </View>
-      <View style={styles.iconContainer}>
-        <TouchableOpacity>
-          <View style={styles.icon}>
-            <MaterialCommunityIcons name="plus" size={48} color="#951616" />
-          </View>
-        </TouchableOpacity>
-      </View>
     </View>
   );
 };
@@ -54,19 +60,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    justifyContent: "space-between",
     padding: 30
   },
   listContainer: {
-    flex: 1
+    flex: 7
   },
   iconContainer: {
-    flex: 0.1
+    flex: 1
   },
   icon: {
-    position: "absolute",
-    bottom: 0,
-    right: 0,
     width: 70,
     height: 70,
     padding: 10,
@@ -78,8 +80,8 @@ const styles = StyleSheet.create({
     },
     borderRadius: 70,
     elevation: 10,
-    backgroundColor: "#fff"
-    // borderWidth: 2
+    backgroundColor: "#fff",
+    zIndex: 100000
   }
 });
 

@@ -5,7 +5,7 @@ const ListItem = props => {
 
   return (
     <TouchableOpacity onPress={props.removeGoalHandler.bind(this, props.id)}>
-      <View style={styles.list}> 
+      <View style={styles.list} key={props.id}> 
         <Text>{props.title}</Text>
       </View>
     </TouchableOpacity>
