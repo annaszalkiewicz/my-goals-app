@@ -30,6 +30,10 @@ const App = () => {
     });
   };
 
+  const closeModal = () => {
+    toggleModal(false);
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.listContainer}>
@@ -49,6 +53,7 @@ const App = () => {
         onChangeText={changeTextHandler}
         onSubmit={submitHandler}
         newGoal={newGoal}
+        closeModal={closeModal}
       />
     </View>
   );

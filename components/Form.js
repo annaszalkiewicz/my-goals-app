@@ -5,7 +5,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 const Form = props => {
   return (
     <Modal visible={props.visible} animationType="slide">
-      <View style={styles.back}>
+      <View style={styles.back} onPress={props.closeModal}>
         <MaterialCommunityIcons name="arrow-left" size={48} color="#951616" />
       </View>
       <View style={styles.container}>
