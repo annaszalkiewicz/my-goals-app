@@ -38,8 +38,6 @@ const App = () => {
 
       <View style={styles.iconContainer}>
         <TouchableOpacity onPress={() => toggleModal(true)}>
-        {/* <TouchableOpacity onPress={() => alert('Clicked icon!')}> */}
-
           <View >
             <MaterialCommunityIcons name="plus" size={48} color="#951616" style={styles.icon} />
           </View>
