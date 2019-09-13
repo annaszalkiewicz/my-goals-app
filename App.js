@@ -23,6 +23,7 @@ const App = () => {
       }
     ]);
     resetForm();
+    toggleModal(false);
   };
 
   const removeGoalHandler = goalId => {

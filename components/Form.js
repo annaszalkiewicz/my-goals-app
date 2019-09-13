@@ -1,13 +1,22 @@
 import React from "react";
-import { View, TextInput, Button, Modal, StyleSheet } from "react-native";
+import {
+  View,
+  TextInput,
+  Button,
+  Modal,
+  TouchableOpacity,
+  StyleSheet
+} from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const Form = props => {
   return (
     <Modal visible={props.visible} animationType="slide">
-      <View style={styles.back} onPress={props.closeModal}>
-        <MaterialCommunityIcons name="arrow-left" size={48} color="#951616" />
-      </View>
+      <TouchableOpacity onPress={props.closeModal}>
+        <View style={styles.back}>
+          <MaterialCommunityIcons name="arrow-left" size={48} color="#951616" />
+        </View>
+      </TouchableOpacity>
       <View style={styles.container}>
         <View style={styles.inputContainer}>
           <TextInput
@@ -35,7 +44,6 @@ const styles = StyleSheet.create({
     padding: 10
   },
   container: {
-    flex: 1,
     justifyContent: "center",
     alignItems: "center",
     padding: 30
